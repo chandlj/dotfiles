@@ -77,12 +77,22 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew macos colorize docker zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+plugins=(
+  git
+  brew
+  macos
+  colorize
+  docker
+  zsh-syntax-highlighting
+  zsh-completions
+  zsh-autosuggestions
+  poetry
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

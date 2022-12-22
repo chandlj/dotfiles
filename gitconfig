@@ -1,0 +1,15 @@
+[user]
+	name = chandlj
+	email = joectmc@gmail.com
+
+[includeIf "gitdir:~/mit/"]
+	path = ~/mit/.gitconfig
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+  
+[alias]
+	lol = log --graph --oneline --decorate --color --all
