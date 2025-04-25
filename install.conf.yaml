@@ -10,8 +10,10 @@
 
 - shell:
   - [sh pre-install.sh, Running pre-installation script]
+  - [brew bundle --file=brew/Brewfile, Installing brew packages]
   - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom forlders]
   - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh custom plugins forlders]
+  - [git submodule update --init --recursive, Updating submodules]
 
 - link:
     ~/.zshrc:

@@ -1,5 +1,25 @@
+# Taps
+tap "hashicorp/tap"
+
+# Development tools
 brew "python"
 brew "uv"
 brew "pnpm"
 brew "tmux"
 brew "git"
+brew "node"  # For Node.js development
+brew "yarn"  # Alternative package manager
+brew "neovim"  # For terminal-based editing
+brew "ripgrep"  # For fast text searching
+brew "fd"  # For finding files
+brew "fzf"  # For fuzzy finding
+brew "hashicorp/tap/terraform"
+# Productivity tools
+cask "cursor"  # IDE
+cask "arc"  # Browser
+# cask "raycast"  # Productivity launcher
+# cask "rectangle"  # Window management
+cask "iterm2"  # Terminal emulator
+cask "postman"  # API testing
+cask "slack"  # Communication
+cask "notion"  # Note taking
