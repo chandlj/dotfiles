@@ -14,6 +14,9 @@ brew "ripgrep"  # For fast text searching
 brew "fd"  # For finding files
 brew "fzf"  # For fuzzy finding
 brew "hashicorp/tap/terraform"
+brew "kubectl"
+brew "awscli"
+
 # Productivity tools
 cask "cursor"  # IDE
 cask "arc"  # Browser
