@@ -1,0 +1,5 @@
+brew "python"
+brew "uv"
+brew "pnpm"
+brew "tmux"
+brew "git"
