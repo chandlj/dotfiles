@@ -15,7 +15,7 @@
 
 - shell:
   - [sh pre-install.sh, Running pre-installation script]
-  - [brew bundle --file=brew/Brewfile, Installing brew packages]
+  # - [brew bundle --file=brew/Brewfile, Installing brew packages]
   - [git submodule update --init --recursive, Updating submodules]
 
 - link:
