@@ -23,6 +23,7 @@ cask "arc"  # Browser
 # cask "raycast"  # Productivity launcher
 # cask "rectangle"  # Window management
 cask "iterm2"  # Terminal emulator
+cask "postico"  # Postgres client
 cask "postman"  # API testing
 cask "slack"  # Communication
 cask "notion"  # Note taking
