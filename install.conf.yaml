@@ -6,16 +6,16 @@
       stderr: true
       stdout: true
 
-- clean: ['~', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/']
+- clean: ['~', '~/.oh-my-zsh/custom/']
 
 - create:
-    - ~/.oh-my-zsh/custom/plugins/
-    - ~/.oh-my-zsh/custom/themes/
     - ~/.ssh/
 
 - shell:
+  - [ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing oh-my-zsh]
   - [brew bundle --file=brew/Brewfile, Installing brew packages]
   - [git submodule update --init --recursive, Updating submodules]
+  - [curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh, Installing rust]
 
 - link:
     ~/.zshrc:
