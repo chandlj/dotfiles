@@ -91,11 +91,14 @@ plugins=(
   docker
   docker-compose
   git
+  helm
+  kubectl
   npm
   nvm
   pip
   postgres
   python
+  rust
   ssh
   ssh-agent
   tmux
