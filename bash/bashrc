@@ -1,0 +1,33 @@
+# PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+# GPG TTY
+export GPG_TTY=$(tty)
+
+# Source local environment variables (secrets, machine-specific config)
+[[ -f ~/.env.local ]] && source ~/.env.local
+
+# FZF keybindings (Ctrl+R for history search, Ctrl+T for file search, Alt+C for cd)
+if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+    source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+
+# FZF bash completion
+if [ -f /usr/share/doc/fzf/examples/completion.bash ]; then
+    source /usr/share/doc/fzf/examples/completion.bash
+fi
+
+# Aliases
+alias sshconfig="$EDITOR ~/.ssh/config"
+alias sshhosts="$EDITOR ~/.ssh/known_hosts"
+alias bashconfig="$EDITOR ~/.bashrc"
+
+# Starship prompt
+eval "$(starship init bash)"

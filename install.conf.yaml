@@ -10,6 +10,7 @@
 
 - create:
     - ~/.ssh/
+    - ~/.config/
 
 - shell:
   - [ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing oh-my-zsh]
@@ -28,3 +29,11 @@
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions/
     ~/.oh-my-zsh/custom/themes/powerlevel10k: oh-my-zsh/custom/themes/powerlevel10k/
+    ~/.bashrc:
+      path: bash/bashrc
+    ~/.bash_profile:
+      path: bash/bash_profile
+    ~/.config/starship.toml:
+      path: starship.toml
+    ~/.tmux.conf:
+      path: tmux.conf

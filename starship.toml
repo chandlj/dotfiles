@@ -1,0 +1,44 @@
+add_newline = false
+format = '''
+[#](bold blue) $username @ $hostname in $directory$git_branch $time$status $cmd_duration
+$python$character'''
+
+[username]
+show_always = true
+format = '[$user]($style)'
+style_user = 'bold cyan'
+style_root = 'bold fg:black bg:yellow'
+
+[hostname]
+ssh_only = false
+format = '[$hostname]($style)'
+style = 'bold green'
+
+[directory]
+truncate_to_repo = false
+truncation_length = 0
+format = '[$path]($style)'
+style = 'bold yellow'
+
+[git_branch]
+style = 'cyan'
+format = ' on [$branch]($style)'
+
+[time]
+disabled = false
+time_format = '%F %T%.3f'
+format = '\[[$time]($style)\]'
+style = 'bold white'
+
+[status]
+style = 'bold red'
+format = ' C:[$status]($style)'
+disabled = false
+
+[cmd_duration]
+show_milliseconds = true
+min_time = 1
+
+[character]
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
