@@ -31,3 +31,4 @@ alias bashconfig="$EDITOR ~/.bashrc"
 
 # Starship prompt
 eval "$(starship init bash)"
+. "$HOME/.cargo/env"

@@ -12,12 +12,13 @@ Personal dotfiles repository using [Dotbot](https://github.com/anishathalye/dotb
 ./install
 ```
 
-This runs Dotbot which reads `install.conf.yaml` to: install oh-my-zsh, run `brew bundle`, update git submodules, install Rust, then create symlinks.
+This runs Dotbot with layered configs. `install.base.yaml` always runs (symlinks, submodules). On macOS (`uname == Darwin`), `install.macos.yaml` also runs (oh-my-zsh, brew, Rust, zsh plugin symlinks).
 
 ## Repository Structure
 
-- `install.conf.yaml` — Dotbot config: defines shell commands to run, symlinks to create, and directories to clean. **This is the central config file.**
-- `install` — Thin wrapper that bootstraps Dotbot and runs the config.
+- `install.base.yaml` — Dotbot config for all platforms: submodules, portable symlinks (bash, starship, tmux).
+- `install.macos.yaml` — Dotbot config for macOS only: oh-my-zsh, brew, Rust, zsh symlinks.
+- `install` — Bootstraps Dotbot, runs base config always and macOS config on Darwin.
 - `zsh/zshrc` — Main zsh configuration, symlinked to `~/.zshrc`. Uses powerlevel10k theme with oh-my-zsh.
 - `zsh/p10k.zsh` — Powerlevel10k prompt config, symlinked to `~/.p10k.zsh`.
 - `bash/bashrc` — Bash configuration for remote Linux machines, symlinked to `~/.bashrc`. Uses starship prompt.
@@ -33,11 +34,11 @@ This runs Dotbot which reads `install.conf.yaml` to: install oh-my-zsh, run `bre
 ## Key Conventions
 
 - **Zsh plugins as git submodules**: zsh-autosuggestions, zsh-completions, zsh-syntax-highlighting, and powerlevel10k are tracked in `.gitmodules` under `oh-my-zsh/custom/`. Add new custom plugins the same way.
-- **Symlinks go in `install.conf.yaml`**: When adding a new dotfile, add both the file and its symlink entry in the `link:` section of `install.conf.yaml`.
+- **Symlinks go in the Dotbot configs**: Portable symlinks in `install.base.yaml`, macOS/zsh-specific symlinks in `install.macos.yaml`.
 - **Brew packages go in `brew/Brewfile`**: Use `brew` for CLI tools and `cask` for GUI apps.
 - **Aliases belong in the shell rc files**: Zsh aliases in `zsh/zshrc`, bash aliases in `bash/bashrc`. The `oh-my-zsh/aliases.sh` file is unused.
 - **Bash and zsh configs are standalone**: Each has its own copies of shared settings (PATH, EDITOR, etc.) rather than sourcing a common file.
 
 ## Sensitive Values
 
-Secrets and machine-specific environment variables go in `~/.env.local`, which is sourced by `zsh/zshrc` but lives outside this repo. Never add tokens, passwords, or API keys directly to tracked files.
+Secrets and machine-specific environment variables go in `~/.env.local`, which is sourced by both `zsh/zshrc` and `bash/bashrc` but lives outside this repo. Never add tokens, passwords, or API keys directly to tracked files.

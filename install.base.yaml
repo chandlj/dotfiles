@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+    shell:
+      stderr: true
+      stdout: true
+
+- clean: ['~']
+
+- create:
+    - ~/.ssh/
+    - ~/.config/
+
+- shell:
+  - [git submodule update --init --recursive, Updating submodules]
+
+- link:
+    ~/.bashrc:
+      path: bash/bashrc
+    ~/.bash_profile:
+      path: bash/bash_profile
+    ~/.config/starship.toml:
+      path: starship.toml
+    ~/.tmux.conf:
+      path: tmux.conf

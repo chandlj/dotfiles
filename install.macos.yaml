@@ -6,16 +6,11 @@
       stderr: true
       stdout: true
 
-- clean: ['~', '~/.oh-my-zsh/custom/']
-
-- create:
-    - ~/.ssh/
-    - ~/.config/
+- clean: ['~/.oh-my-zsh/custom/']
 
 - shell:
   - [ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing oh-my-zsh]
   - [brew bundle --file=brew/Brewfile, Installing brew packages]
-  - [git submodule update --init --recursive, Updating submodules]
   - [curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh, Installing rust]
 
 - link:
@@ -29,11 +24,3 @@
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions/
     ~/.oh-my-zsh/custom/themes/powerlevel10k: oh-my-zsh/custom/themes/powerlevel10k/
-    ~/.bashrc:
-      path: bash/bashrc
-    ~/.bash_profile:
-      path: bash/bash_profile
-    ~/.config/starship.toml:
-      path: starship.toml
-    ~/.tmux.conf:
-      path: tmux.conf
